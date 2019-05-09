@@ -12,3 +12,8 @@
                :while (< i bound)
                :when (u/divide? 2 i)]
            i)))
+
+(defn problem-3 [bound]
+  (last (u/factors bound)))
+
+
