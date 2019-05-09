@@ -1,6 +1,6 @@
 (ns euler.core-test
   (:require [clojure.test :refer :all]
-            [euler.core :refer :all]))
+            [euler.util :refer :all]))
 
 (deftest a-test
   (testing "FIXME, I fail."

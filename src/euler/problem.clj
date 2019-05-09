@@ -1,8 +1,9 @@
 (ns euler.problem
-  (:require [euler.core :as e]))
+  (:require [euler.util :as u]))
 
 (defn problem-1 [bound]
-  (apply + (for [i (range bound)
-                 :when (or (zero? (mod i 3))
-                           (zero? (mod i 5)))]
-             i)))
+  (u/sum (for [i (range bound)
+               :when (or (u/divide? 3 i)
+                         (u/divide? 5 i))]
+           i)))
+
