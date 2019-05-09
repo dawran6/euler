@@ -7,3 +7,8 @@
                          (u/divide? 5 i))]
            i)))
 
+(defn problem-2 [bound]
+  (u/sum (for [i u/fibs
+               :while (< i bound)
+               :when (u/divide? 2 i)]
+           i)))
