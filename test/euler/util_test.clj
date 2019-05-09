@@ -12,3 +12,9 @@
 
 (deftest fib-test
   (is (= (take 10 fibs) '(0 1 1 2 3 5 8 13 21 34))))
+
+(deftest factors-test
+  (is (= (factors 2) '(2)))
+  (is (= (factors 12) '(2 2 3)))
+  (is (= (factors 49) '(7 7)))
+  (is (= (factors 2310) '(2 3 5 7 11))))
