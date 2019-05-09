@@ -16,4 +16,15 @@
 (defn problem-3 [bound]
   (last (u/factors bound)))
 
+(defn problem-4 [bound]
+  (let [low (u/pow 10 (dec bound))
+        high (u/pow 10 bound)]
+    (apply max (for [i (range low high)
+                     j (range i high)
+                     :let [n (* i j)]
+                     :when (u/palindrome? n)]
+                 n))))
 
+(def bound 2)
+(def low 10)
+(def high 100)

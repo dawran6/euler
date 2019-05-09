@@ -18,3 +18,7 @@
   (is (= (factors 12) '(2 2 3)))
   (is (= (factors 49) '(7 7)))
   (is (= (factors 2310) '(2 3 5 7 11))))
+
+(deftest palindrome-test
+  (is (true? (palindrome? 9009)))
+  (is (false? (palindrome? 1234))))

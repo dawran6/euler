@@ -7,6 +7,8 @@
 
 (def sum (partial reduce +))
 
+(defn pow [base exp] (reduce * (repeat exp base)))
+
 (def fibs
   (map first (iterate (fn [[a b]] [b (+ a b)]) [0 1])))
 
@@ -17,4 +19,6 @@
                     :else (recur n (inc p))))
    n 2))
 
-
+(defn palindrome? [n]
+  (let [s (str n)]
+    (= (seq s) (reverse s))))
