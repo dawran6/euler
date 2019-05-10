@@ -1,9 +1,11 @@
 (ns euler.util)
 
-(defn divide? [d n]
+(defn divides? [d n]
   (zero? (mod n d)))
 
 (defn sqrt [n] (Math/floor (Math/sqrt n)))
+
+(defn sqr [n] (* n n))
 
 (def sum (partial reduce +))
 
@@ -15,7 +17,7 @@
 (defn factors [n]
   ((fn step [n p] (cond
                     (> p n) nil
-                    (divide? p n) (cons p (lazy-seq (step (quot n p) p)))
+                    (divides? p n) (cons p (lazy-seq (step (quot n p) p)))
                     :else (recur n (inc p))))
    n 2))
 
@@ -25,3 +27,12 @@
 (defn palindrome? [n]
   (let [s (str n)]
     (= (seq s) (reverse s))))
+
+(defn primes
+  ([] (primes 2 []))
+  ([i found-primes]
+   (if (some
+        #(divides? % i)
+        (take-while #(<= (sqr %) i) found-primes))
+     (recur (inc i) found-primes)
+     (cons i (lazy-seq (primes (inc i) (conj found-primes i)))))))

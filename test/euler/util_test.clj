@@ -3,9 +3,9 @@
             [euler.util :refer :all]))
 
 (deftest divide-test
-  (is (true? (divide? 2 10)))
-  (is (true? (divide? 1 0)))
-  (is (false? (divide? 3 10))))
+  (is (true? (divides? 2 10)))
+  (is (true? (divides? 1 0)))
+  (is (false? (divides? 3 10))))
 
 (deftest sum-test
   (is (= (sum '(1 1 1)) 3)))
@@ -28,3 +28,6 @@
                          5 1}))
   (is (= (factorize 100) {2 2
                           5 2})))
+
+(deftest primes-test
+  (is (= (take 10 (primes)) '(2 3 5 7 11 13 17 19 23 29))))

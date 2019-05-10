@@ -3,14 +3,14 @@
 
 (defn problem-1 [bound]
   (u/sum (for [i (range bound)
-               :when (or (u/divide? 3 i)
-                         (u/divide? 5 i))]
+               :when (or (u/divides? 3 i)
+                         (u/divides? 5 i))]
            i)))
 
 (defn problem-2 [bound]
   (u/sum (for [i u/fibs
                :while (< i bound)
-               :when (u/divide? 2 i)]
+               :when (u/divides? 2 i)]
            i)))
 
 (defn problem-3 [bound]
@@ -36,3 +36,5 @@
         square-of-sums (u/sqr (reduce + ns))]
     (- square-of-sums sum-of-squares)))
 
+(defn problem-7 [bound]
+  (nth (u/primes) (dec bound)))

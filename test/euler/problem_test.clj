@@ -25,3 +25,7 @@
 (deftest problem-6-test
   (is (= (problem-6 10) 2640))
   (is (= (problem-6 100) 25164150)))
+
+(deftest problem-7-test
+  (is (= (problem-7 6) 13))
+  (is (= (problem-7 10001) 104743)))
