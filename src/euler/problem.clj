@@ -29,3 +29,10 @@
   (->> (for [i (range (inc bound))] (u/factorize i))
        (apply merge-with max)
        (reduce (fn [acc [k v]] (* acc (u/pow k v))) 1)))
+
+(defn problem-6 [bound]
+  (let [ns             (range (inc bound))
+        sum-of-squares (apply + (map u/sqr ns))
+        square-of-sums (u/sqr (reduce + ns))]
+    (- square-of-sums sum-of-squares)))
+
