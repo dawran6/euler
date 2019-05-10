@@ -22,3 +22,9 @@
 (deftest palindrome-test
   (is (true? (palindrome? 9009)))
   (is (false? (palindrome? 1234))))
+
+(deftest factorize-test
+  (is (= (factorize 10) {2 1
+                         5 1}))
+  (is (= (factorize 100) {2 2
+                          5 2})))

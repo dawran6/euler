@@ -25,6 +25,7 @@
                      :when (u/palindrome? n)]
                  n))))
 
-(def bound 2)
-(def low 10)
-(def high 100)
+(defn problem-5 [bound]
+  (->> (for [i (range (inc bound))] (u/factorize i))
+       (apply merge-with max)
+       (reduce (fn [acc [k v]] (* acc (u/pow k v))) 1)))

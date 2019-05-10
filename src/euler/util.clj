@@ -19,6 +19,9 @@
                     :else (recur n (inc p))))
    n 2))
 
+(def factorize
+  (comp frequencies factors))
+
 (defn palindrome? [n]
   (let [s (str n)]
     (= (seq s) (reverse s))))
