@@ -31,3 +31,7 @@
 
 (deftest primes-test
   (is (= (take 10 (primes)) '(2 3 5 7 11 13 17 19 23 29))))
+
+(deftest pythagorean-test
+  (is (true? (pythagorean-triplet? '(3 4 5))))
+  (is (false? (pythagorean-triplet? '(3 4 6)))))
