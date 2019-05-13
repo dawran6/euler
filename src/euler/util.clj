@@ -36,3 +36,9 @@
         (take-while #(<= (sqr %) i) found-primes))
      (recur (inc i) found-primes)
      (cons i (lazy-seq (primes (inc i) (conj found-primes i)))))))
+
+(defn pythagorean-triplet? [col]
+  {:pre [(= 3 (count col))
+         (every? int? col)]}
+  (let [[a b c] (sort triplet)]
+    (= (+ (* a a) (* b b)) (* c c))))
