@@ -40,5 +40,5 @@
 (defn pythagorean-triplet? [col]
   {:pre [(= 3 (count col))
          (every? int? col)]}
-  (let [[a b c] (sort triplet)]
+  (let [[a b c] (sort col)]
     (= (+ (* a a) (* b b)) (* c c))))
