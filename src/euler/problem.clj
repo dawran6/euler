@@ -69,6 +69,15 @@
          (map (partial apply *))
          (apply max))))
 
+(defn problem-9 [bound]
+  (for [a (range 1 bound)
+        b (range (inc a) bound)
+        :let [c (- bound a b)]
+        :while (> c b a)
+        :when (u/pythagorean-triplet? [a b c])]
+    (* a b c)))
+
 (comment
+
 
   )

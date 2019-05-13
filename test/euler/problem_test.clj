@@ -33,3 +33,7 @@
 (deftest problem-8-test
   (is (= (problem-8 4) 5832))
   (is (= (problem-8 13) 23514624000)))
+
+(deftest problem-9-test
+  (is (= (problem-9 12) '(60)))
+  (is (= (problem-9 1000) '(31875000))))
